@@ -1,4 +1,5 @@
 ﻿
+
 name: Validate Bicep
 
 on:
@@ -7,19 +8,19 @@ on:
     pull_request:
         branches: [main]
 
+
 jobs:
-    validate:
-        runs-on: ubuntu-latest
+
+ validate:
+    runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v4
 
         - name: Install Bicep CLI
-            run: az bicep install
+          run: az bicep install
 
         - name: Validate Bicep template
-            run: az bicep build --file environments/dev/main.bicep
-
-
+          run: az bicep build --file environments/dev/main.bicep
 
 
 
